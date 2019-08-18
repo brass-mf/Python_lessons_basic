@@ -10,14 +10,18 @@ __author__ = 'Афонин Сергей Сергеевич'
 # * постарайтесь решить задачу с применением арифметики и цикла while;
 # * при желании и понимании решите задачу с применением цикла for.
 
-var_input = input('Введите целое беззнаковое число: ')
+var_input = int(input('Введите целое беззнаковое число: '))
 i = 0
-result = 0
-while i < len(var_input):
-    if int(var_input[i]) > result:
-        result = int(var_input[i])
-    i +=1
-print(result)
+max = 0
+if var_input == 0:
+    max = var_input
+elif var_input > 0:
+    while var_input > 0:
+        i = var_input % 10
+        if i > max:
+            max = i
+        var_input = var_input // 10
+print(max)
 
 # Задача-2: Исходные значения двух переменных запросить у пользователя.
 # Поменять значения переменных местами. Вывести новые значения на экран.
