@@ -12,7 +12,18 @@
 # 4.  арбуз
 
 # Подсказка: воспользоваться методом .format()
-
+max_num=0
+max_str=0
+fruits = ['банан','киви','грейпфрут1111111111111111111111','апельсин']
+for idx, item in enumerate(fruits):
+    if len(str(idx))> max_num:
+        max_num=len(str(idx))
+    if len(item)> max_str:
+        max_str=len(item)
+format_fruits = ''
+for idx, item in enumerate(fruits):
+    format_fruits = format_fruits+ str(idx).ljust(max_num+1) + item.rjust(max_str+1) +'\n'
+print(format_fruits)
 
 # Задача-2:
 # Даны два произвольные списка.
