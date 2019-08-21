@@ -7,6 +7,12 @@ equation = 'y = -12x + 11111140.2121'
 x = 2.5
 # вычислите и выведите y
 
+list_equation = equation.split()
+b = float(list_equation[4])
+k = float(list_equation[2][:-1])
+y = k*x+b
+print('b: ',str(b),'k: ',str(k))
+print(str(y))
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy'.
 # Проверить, корректно ли введена дата.
