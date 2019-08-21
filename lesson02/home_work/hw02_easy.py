@@ -17,11 +17,13 @@
 # Задача-2:
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке.
-list1 = [list1 * 3 for list1 in 'Произвольный список №1!']
-list2 = [list2 * 3 for list2 in 'Произвольный список №2!']
+list1 = list('Произвольный список №1!')
+list2 = list('Произвольный список №2!')
+ltemp = list1[:]
 for i in list1:
     if i in list2:
-        list1.remove(i)
+        ltemp.remove(i)
+list1 = ltemp
 print(list1)
 
 # Задача-3:
