@@ -25,6 +25,15 @@ print(lnum2)
 # в диапазоне от -100 до 100. В списке должно быть n - элементов.
 # Подсказка:
 # для получения случайного числа используйте функцию randint() модуля random
+import random
+
+n = int(input('Введите n: '))
+i=0
+random_list=list()
+while i<n:
+    random_list.append(random.randint(-100,100))
+    i+=1
+print(random_list)
 
 
 # Задача-4: Дан список, заполненный произвольными целыми числами.
