@@ -48,7 +48,7 @@ print(random_list)
 
 lst = [1, 2, 4, 5, 6, 2, 5, 2]
 
-ltemp = lst[:]
+ltemp = list()
 for i in lst:
     if i not in ltemp:
         ltemp.append(i)
