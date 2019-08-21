@@ -47,10 +47,13 @@ print(random_list)
 # например, lst = [1 , 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 4, 6]
 
 lst = [1, 2, 4, 5, 6, 2, 5, 2]
-
 ltemp = list()
+ldel = list()
 for i in lst:
     if i not in ltemp:
         ltemp.append(i)
+    else:
+        ldel.append(i)
 print('--- Задача 4 ---')
 print(ltemp)
+print(set(ltemp) - set(ldel))
