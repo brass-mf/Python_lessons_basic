@@ -25,6 +25,7 @@ for idx, item in enumerate(fruits):
 format_fruits = ''
 for idx, item in enumerate(fruits):
     format_fruits = format_fruits+ str(idx).ljust(max_num+1) + item.rjust(max_str+1) +'\n'
+print('--- Задача 1 ---')
 print(format_fruits)
 
 # Задача-2:
@@ -37,6 +38,7 @@ for i in list1:
     if i in list2:
         ltemp.remove(i)
 list1 = ltemp
+print('--- Задача 2 ---')
 print(list1)
 
 # Задача-3:
@@ -51,4 +53,5 @@ for i in lnum1:
         lnum2.append(i / 4)
     else:
         lnum2.append(i * 2)
+print('--- Задача 3 ---')
 print(lnum2)
