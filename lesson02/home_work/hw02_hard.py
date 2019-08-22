@@ -25,8 +25,18 @@ print(str(y))
 #  (т.е. 2 символа для дня, 2 - для месяца, 4 - для года)
 
 # Пример корректной даты
-date = '01.11.1985'
-str = split()
+date = '-1.12.1985'
+str = date.split('.')
+print(str)
+if len(str[0])!=2 or len(str[1])!=2 or len(str[2])!=4:
+    print('Неверный формат')
+elif int(str[2]) <1 or int(str[2]) >9999:
+    print ('Неверный год')
+elif  str[1][0] !='0' and int(str[1]) < 1 or int(str[1]) >12:
+    print('Неверный месяц')
+elif  str[0][0] !='0' and int(str[0]) < 1 or int(str[0]) >31:
+    print('Неверный день')
+else: print('Всё OK')
 # Примеры некорректных дат
 # date = '01.22.1001'
 # date = '1.12.1001'
