@@ -25,9 +25,27 @@ print(my_round(9999917111.000023321, 5))
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 def lucky_ticket(ticket_number):
-    pass
+    var_len = round(len(str(ticket_number))/2+0.4)
+    first = ticket_number//10**var_len
+    second = ticket_number%10**var_len
+    print(first)
+    print(second)
+    sum_first = 0
+    sum_second = 0
+    while first > 0:
+        i = first % 10
+        sum_first = sum_first + i
+        first = first // 10
 
+    while second > 0:
+        i = second % 10
+        sum_second = sum_second + i
+        second = second // 10
+    if sum_first == sum_second:
+        return True
+    else: return False
 
 print(lucky_ticket(123006))
 print(lucky_ticket(12321))
 print(lucky_ticket(436751))
+print(lucky_ticket(111222))
