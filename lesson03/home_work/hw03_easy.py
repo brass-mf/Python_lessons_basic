@@ -25,11 +25,25 @@ print(my_round(9999917111.000023321, 5))
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
 def lucky_ticket(ticket_number):
-    var_len = round(len(str(ticket_number))/2+0.4)
-    first = ticket_number//10**var_len
-    second = ticket_number%10**var_len
-    print(first)
-    print(second)
+    def get_num_len(number):
+        '''
+        :param number: входное число
+        :return: длина числа
+        '''
+        res = 0
+        while number > 0:
+            res += 1
+            number = number // 10
+        return res
+
+    var_len = get_num_len(ticket_number)
+    if var_len%2==0:
+        first = ticket_number//10**(var_len/2)
+        second = ticket_number%10**(var_len/2)
+    else:
+        var_len_2 = round(var_len/2+0.4)
+        first = ticket_number//10**(var_len_2-1)
+        second = ticket_number%10**(var_len_2)
     sum_first = 0
     sum_second = 0
     while first > 0:
@@ -49,3 +63,4 @@ print(lucky_ticket(123006))
 print(lucky_ticket(12321))
 print(lucky_ticket(436751))
 print(lucky_ticket(111222))
+print(lucky_ticket(1))
