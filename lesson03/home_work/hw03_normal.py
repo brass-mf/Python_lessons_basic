@@ -46,3 +46,17 @@ print(sort_to_max([2, 1, -12, 2.5, 20, -11, 1, 4, -20]))
 # Даны четыре точки А1(х1, у1), А2(x2 ,у2), А3(x3 , у3), А4(х4, у4).
 # Определить, будут ли они вершинами параллелограмма.
 
+def is_top(list):
+    if list[0][0]+list[1][0]==list[2][0]+list[3][0] and list[0][1]+list[1][1]==list[2][1]+list[3][1]:
+        result = True
+    elif list[0][0]+list[2][0]==list[1][0]+list[3][0] and list[0][1]+list[2][1]==list[1][1]+list[3][1]:
+        result = True
+    elif list[0][0]+list[3][0]==list[1][0]+list[2][0] and list[0][1]+list[3][1]==list[1][1]+list[2][1]:
+        result = True
+    else:
+        result = False
+    return result
+
+print(is_top(([3,1],[2,5],[7,1],[6,5])))
+
+
