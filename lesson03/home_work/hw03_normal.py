@@ -3,9 +3,16 @@
 # Первыми элементами ряда считать цифры 1 1
 
 def fibonacci(n, m):
+    item = 2
+    lst = [1,1]
+    while item <= m:
+        lst.append(lst[item-2]+lst[item-1])
+        item+=1
+    return lst[n:m+1]
 
-    return
-
+print(fibonacci(3,9))
+print(fibonacci(0,0))
+print(fibonacci(2,20))
 # Задача-2:
 # Напишите функцию, сортирующую принимаемый список по возрастанию.
 # Для сортировки используйте любой алгоритм (например пузырьковый).
