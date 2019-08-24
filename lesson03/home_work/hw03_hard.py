@@ -18,6 +18,39 @@
 # они получают удвоенную ЗП, пропорциональную норме.
 # Кол-во часов, которые были отработаны, указаны в файле "data/hours_of"
 
+f_workers = open('data/workers','r',encoding='utf-8')
+i=0
+workers_list=list()
+for line in f_workers:
+    workers_list.append(line.split())
+    i+=1
+f_workers.close()
+
+f_hours = open('data/hours_of','r',encoding='utf-8')
+i=0
+hours_list=list()
+for line in f_hours:
+    hours_list.append(line.split())
+    i+=1
+f_hours.close()
+workers_list.pop(0)
+hours_list.pop(0)
+
+def get_salary(salary,hours,norma):
+    if hours==norma:
+        result=salary
+    elif hours>norma:
+        result=salary+(hours-norma)*2*(salary/hours)
+    elif hours<norma:
+        result=salary-(norma-hours)*(salary/hours)
+    return result
+
+for worker in workers_list:
+    for hour in hours_list:
+        if hour[0] == worker[0] and hour[1] == worker[1]:
+            worker[2] = get_salary(int(worker[2]),int(worker[4]),int(hour[2]))
+
+print(workers_list)
 
 # Задание-3:
 # Дан файл ("data/fruits") со списком фруктов.
