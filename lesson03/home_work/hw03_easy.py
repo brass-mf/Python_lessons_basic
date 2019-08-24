@@ -5,12 +5,17 @@
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
 def my_round(number, ndigits):
-    pass
+    result = number*(10**(ndigits*2))//10**ndigits
+    var_ostatok = number*(10**(ndigits*2))%10**ndigits/(10**(ndigits-1))
+    if var_ostatok>4:
+       result = result +1
+    return(result/(10**(ndigits)))
 
-
-print(my_round(2.1234567, 5))
+print(my_round(2.1234567, 0))
 print(my_round(2.1999967, 5))
 print(my_round(2.9999967, 5))
+print(my_round(0.9999917, 5))
+print(my_round(9999917111.000023321, 5))
 
 
 # Задание-2:
