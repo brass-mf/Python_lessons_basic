@@ -64,3 +64,21 @@ print(workers_list)
 # Подсказка:
 # Чтобы получить список больших букв русского алфавита:
 # print(list(map(chr, range(ord('А'), ord('Я')+1))))
+
+f_fruits = open('data/fruits.txt','r',encoding='utf-8')
+fruits_dict={}
+for line in f_fruits:
+    if line!='\n':
+        key = line[0:1].upper()
+        if key not in fruits_dict.keys():
+            fruits_dict[key] = line
+        else:
+            #print(fruits_dict[key])
+            fruits_dict[key] = fruits_dict[key]+line
+f_fruits.close()
+print(fruits_dict)
+
+for item in fruits_dict:
+    f_file = open('data/fruit_'+str(item)+'.txt', 'w', encoding='utf-8')
+    f_file.write(fruits_dict[item])
+    f_file.close()
