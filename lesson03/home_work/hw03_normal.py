@@ -41,6 +41,14 @@ print(sort_to_max([2, 1, -12, 2.5, 20, -11, 1, 4, -20]))
 # Напишите собственную реализацию стандартной функции filter.
 # Разумеется, внутри нельзя использовать саму функцию filter.
 
+def func_filter(in_function, in_lst):
+    result = []
+    for i in in_lst:
+        if in_function(i):
+            result.append(i)
+    return result
+
+print(func_filter(lambda x: x<10,[1,2,12,14,15,0]))
 
 # Задача-4:
 # Даны четыре точки А1(х1, у1), А2(x2 ,у2), А3(x3 , у3), А4(х4, у4).
