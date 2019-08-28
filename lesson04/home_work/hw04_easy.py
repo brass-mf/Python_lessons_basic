@@ -16,3 +16,7 @@
 # + Элемент кратен 3
 # + Элемент положительный
 # + Элемент не кратен 4
+
+input_list = [1,100,-10,0,-1,65,44,33,60]
+output_list = [item for item in input_list if (item > 0 and item%3==0 and item%4!=0)]
+print(output_list)
