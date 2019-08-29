@@ -50,3 +50,11 @@ number = """
 # Программа получает на вход восемь пар чисел,
 # каждое число от 1 до 8 — координаты 8 ферзей.
 # Если ферзи не бьют друг друга, выведите слово NO, иначе выведите YES.
+coordinates = [[1,8],[2,4],[3,1],[4,3],[5,6],[6,2],[7,7],[8,5]]
+result='NO'
+for index,item in enumerate(coordinates):
+     for index1,item1 in enumerate(coordinates):
+         if index!=index1:
+             if item[0]==item1[0] or item[1]==item1[1] or abs(item[0]-item1[0])==abs(item[1]-item1[1]):
+                result='YES'
+print(result)
