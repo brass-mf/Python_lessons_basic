@@ -41,6 +41,16 @@ number = """
 84580156166097919133875499200524063689912560717606
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450"""
+max_i=0
+max_res=0
+string = str(number).replace('\n','')
+for i, num in enumerate(string[:len(string)-4]):
+    res = int(string[i])*int(string[i+1])*int(string[i+2])*int(string[i+3])*int(string[i+4])
+    if res>max_res:
+        max_res = res
+        max_i = i
+print(string)
+print('Индекс:',str(i),'Произведение:',str(max_res))
 
 
 # Задание-3 (Ферзи):
