@@ -49,8 +49,7 @@ for i, num in enumerate(string[:len(string)-4]):
     if res>max_res:
         max_res = res
         max_i = i
-print(string)
-print('Индекс:',str(i),'Произведение:',str(max_res))
+print('Индекс:',str(max_i),'Произведение:',str(max_res))
 
 
 # Задание-3 (Ферзи):
