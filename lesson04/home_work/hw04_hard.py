@@ -12,8 +12,8 @@ matrix = [[1, 0, 8],
 #                  [8, 1, 2]]
 
 # Суть сложности hard: Решите задачу в одну строку
-matrix = list(zip(matrix[0], matrix[1], matrix[2]))
-print (matrix)
+matrix_rotate = list(zip(matrix[0], matrix[1], matrix[2]))
+print (matrix_rotate)
 
 
 # Задание-2:
