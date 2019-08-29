@@ -67,5 +67,5 @@ f_file.close()
 with open('data/numbers.txt', 'r') as f_file:
     line = f_file.readlines()
 print(line)
-found = re.findall(r'[0|1|2|3|4|5|6|7|8|9]{9}', str(line))
+found = re.findall(r'([2]+)\1', str(line))
 print('Task3 using RE: ',found)
