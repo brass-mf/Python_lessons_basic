@@ -24,6 +24,16 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
 found = re.findall(r'([a-z]+)', line)
 print('Task1 using RE: ',found)
 
+temp_str = ''
+temp_lst=list()
+for chr in line:
+    if chr.upper()!=chr:
+        temp_str = temp_str+chr
+    else:
+        if temp_str!='':
+            temp_lst.append(temp_str)
+        temp_str=''
+print('Task1 not using RE: ',temp_lst)
 
 
 # Задание-2:
@@ -67,5 +77,5 @@ f_file.close()
 with open('data/numbers.txt', 'r') as f_file:
     line = f_file.readlines()
 print(line)
-found = re.findall(r'([2]+)\1', str(line))
+found = re.findall(r'(.)\1\1\1', str(line))
 print('Task3 using RE: ',found)
