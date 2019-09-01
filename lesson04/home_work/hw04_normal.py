@@ -63,6 +63,17 @@ line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm'\
 found = re.findall(r'[a-z]{2}([A-Z]+)[A-Z]{2}', line)
 print('Task2 using RE: ',found)
 
+# temp_str = ''
+# temp_lst=list()
+# for index, item in enumerate(line_2):
+#     if temp_lst[i]!=temp_lst[i] and temp_lst[i+1]!=temp_lst[i+1] and temp_lst[i+2]==temp_lst[i+2]  and temp_lst[i+2]==temp_lst[i+2] and temp_lst[i+3]==temp_lst[i+3]  and temp_lst[i+4]==temp_lst[i+4]:
+#         temp_str = temp_str+chr
+#     else:
+#         if temp_str!='':
+#             temp_lst.append(temp_str)
+#         temp_str=''
+# print('Task1 not using RE: ',temp_lst)
+
 # Задание-3:
 # Напишите скрипт, заполняющий указанный файл (самостоятельно задайте имя файла)
 # произвольными целыми цифрами, в результате в файле должно быть
@@ -77,5 +88,6 @@ f_file.close()
 with open('data/numbers.txt', 'r') as f_file:
     line = f_file.readlines()
 print(line)
-found = re.findall(r'(.)\1\1\1', str(line))
+found = re.findall(r'[0-9]+/1', str(line))
 print('Task3 using RE: ',found)
+print('Task3 НЕ ГОТОВО ')
