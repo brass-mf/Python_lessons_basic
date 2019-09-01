@@ -27,11 +27,13 @@ def menu():
     ))
 
 choice = menu()
-if choice =='2':
+if choice=='1':
+
+elif choice =='2':
     print(hw05_easy.lsfiles())
 elif choice=='3':
     print(hw05_easy.rm_dir(getdirname()))
-elif choice=='3':
-    print('!!')
 elif choice=='4':
-    print('')
+    print(hw05_easy.create_dir(getdirname()))
+else:
+    exit()

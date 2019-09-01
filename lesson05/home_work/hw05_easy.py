@@ -73,3 +73,12 @@ def create_dir(dir_name):
     except FileExistsError:
         result = 'Невозможно создать'
     return result
+
+def ch_dir(dir_name):
+    dir_path = os.path.join(os.getcwd(), dir_name)
+    try:
+        os.chdir(dir_path)
+        result = 'Успешно перешел'
+    except FileNotFoundError:
+        result = 'Невозможно перейти'
+    return result
