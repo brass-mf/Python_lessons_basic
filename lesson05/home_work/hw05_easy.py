@@ -64,3 +64,12 @@ def rm_dir(dir_name):
     except FileNotFoundError:
         result = 'Невозможно удалить'
     return result
+
+def create_dir(dir_name):
+    dir_path = os.path.join(os.getcwd(), dir_name)
+    try:
+        os.mkdir(dir_path)
+        result = 'Успешно создано'
+    except FileExistsError:
+        result = 'Невозможно создать'
+    return result
