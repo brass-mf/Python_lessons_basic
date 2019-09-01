@@ -32,5 +32,13 @@ print(rmdir())
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
 
+def lsdir():
+    result = ''
+    for item in os.listdir(path=os.getcwd()):
+        if os.path.isdir(os.path.join(os.getcwd(), item)):
+            result = result + item + '\n'
+    return result
+print('-----список папок-------')
+print(lsdir())
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
