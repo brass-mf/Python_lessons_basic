@@ -14,7 +14,7 @@
 # оформленные в виде соответствующих функций,
 # и импортированные в данный файл из easy.py
 
-import hw05_easy
+from hw05_easy import ch_dir,lsfiles,rm_dir,create_dir
 def getdirname():
     return (input('Введите имя папки:'))
 
@@ -23,17 +23,26 @@ def menu():
     '1 ->Перейти в папку\n'\
     '2 ->Просмотреть содержимое текущей папки\n'\
     '3 ->Удалить папку\n'\
-    '4 ->Создать папку\n'\
-    ))
+    '4 ->Создать папку\n' \
+    '5 ->Выход\n' \
+        ))
 
-choice = menu()
-if choice=='1':
+def do_action(choice):
+    if choice=='1':
+        print(ch_dir(getdirname()))
+        do_action(menu())
+    elif choice =='2':
+        print(lsfiles())
+        do_action(menu())
+    elif choice=='3':
+        print(rm_dir(getdirname()))
+        do_action(menu())
+    elif choice=='4':
+        print(create_dir(getdirname()))
+        do_action(menu())
+    elif choice == '5':
+        exit()
+    else:
+        exit()
 
-elif choice =='2':
-    print(hw05_easy.lsfiles())
-elif choice=='3':
-    print(hw05_easy.rm_dir(getdirname()))
-elif choice=='4':
-    print(hw05_easy.create_dir(getdirname()))
-else:
-    exit()
+do_action(menu())

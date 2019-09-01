@@ -48,7 +48,7 @@ from shutil import copyfile
 copyfile(sys.argv[0], sys.argv[0]+'_copy')
 
 def lsfiles():
-    result = ''
+    result = '..\n'
     for item in os.listdir(path=os.getcwd()):
         if os.path.isdir(os.path.join(os.getcwd(), item)):
             result = result + 'Directory '+item + '\n'
