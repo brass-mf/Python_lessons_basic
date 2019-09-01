@@ -42,3 +42,7 @@ print('-----список папок-------')
 print(lsdir())
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
+import sys
+print('----TASK3------')
+from shutil import copyfile
+copyfile(sys.argv[0], sys.argv[0]+'_copy')
