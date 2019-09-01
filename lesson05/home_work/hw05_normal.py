@@ -14,7 +14,7 @@
 # оформленные в виде соответствующих функций,
 # и импортированные в данный файл из easy.py
 
-import hw02_easy
+import hw05_easy
 def getdirname():
     return (input('Введите имя папки:'))
 
@@ -26,4 +26,12 @@ def menu():
     '4 ->Создать папку\n'\
     ))
 
-if menu()=='1':
+choice = menu()
+if choice =='2':
+    print(hw05_easy.lsfiles())
+elif choice=='1':
+    print('!!')
+elif choice=='3':
+    print('!!')
+elif choice=='4':
+    print('')

@@ -55,3 +55,12 @@ def lsfiles():
         else: result = result + 'File '+item + '\n'
     return result
 print(lsfiles())
+
+def rm_dir(dir_name):
+    dir_path = os.path.join(os.getcwd(), dir_name)
+    try:
+        os.rmdir(dir_path)
+        result = 'Успешно удалено'
+    except FileNotFoundError:
+        result = 'Невозможно удалить'
+    return result
