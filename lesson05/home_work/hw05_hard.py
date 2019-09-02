@@ -79,7 +79,7 @@ do = {
 try:
     if sys.argv[1]=='mkdir':
         dir_name = sys.argv[2]
-        print(file_name)
+        print(dir_name)
     if sys.argv[1]=='cp':
         file_name = sys.argv[2]
         print(file_name)
