@@ -49,7 +49,7 @@ def ping():
 do = {
     "help": print_help,
     "mkdir": make_dir,
-    "ping": ping
+    "ping": ping,
     "ls": ls
 }
 
