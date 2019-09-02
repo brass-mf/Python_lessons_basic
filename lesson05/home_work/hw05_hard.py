@@ -40,7 +40,7 @@ def ls():
     print(os.getcwd())
 
 def cp():
-    from shutil import copyfile
+    #from shutil import copyfile
     if not file_name:
         print("Необходимо указать имя файла вторым параметром")
         return
