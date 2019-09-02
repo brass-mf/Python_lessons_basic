@@ -28,7 +28,7 @@ def print_help():
     print("ls - отображение пути текущей директории")
 
 def ls():
-    return os.getcwd()
+    print(os.getcwd())
 
 
 def make_dir():
