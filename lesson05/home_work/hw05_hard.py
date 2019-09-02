@@ -79,7 +79,8 @@ do = {
 try:
     if sys.argv[1]=='mkdir':
         dir_name = sys.argv[2]
-    if sys.argv[1]=='cp' or sys.argv[1]=='rm':
+        print(file_name)
+    if sys.argv[1]=='cp':
         file_name = sys.argv[2]
         print(file_name)
 except IndexError:
