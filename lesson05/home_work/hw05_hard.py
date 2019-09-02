@@ -26,10 +26,24 @@ def print_help():
     print("mkdir <dir_name> - создание директории")
     print("ping - тестовый ключ")
     print("ls - отображение пути текущей директории")
+    print("cp <file_name> - создает копию указанного файла")
+    print("rm <file_name> - удаляет указанный файл (запросить подтверждение операции)")
+    print("cd <full_path or relative_path> - меняет текущую директорию на указанную")
 
 def ls():
     print(os.getcwd())
 
+def cp():
+    from shutil import copyfile
+    if not file_name:
+        print("Необходимо указать имя файла вторым параметром")
+        return
+    file_name = os.path.join(os.getcwd(), file_name)
+    try:
+        copyfile(file_name, file_name + '_copy')
+        print('файл {} создан'.format(file_name))
+    except FileExistsError:
+        print('файл {} уже существует'.format(file_name))
 
 def make_dir():
     if not dir_name:
@@ -50,11 +64,17 @@ do = {
     "help": print_help,
     "mkdir": make_dir,
     "ping": ping,
-    "ls": ls
+    "ls": ls,
+    "cp": cp,
+    "rm": rm,
+    "cd": cd
 }
 
 try:
-    dir_name = sys.argv[2]
+    if sys.argv[1]=='mkdir':
+        dir_name = sys.argv[2]
+    if sys.argv[1]=='cp' or sys.argv[1]=='rm':
+        file_name = sys.argv[2]
 except IndexError:
     dir_name = None
 
