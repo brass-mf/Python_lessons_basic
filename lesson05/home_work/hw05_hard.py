@@ -27,7 +27,7 @@ def print_help():
     print("ping - тестовый ключ")
     print("ls - отображение пути текущей директории")
 
-def ls()
+def ls():
     return os.getcwd()
 
 
