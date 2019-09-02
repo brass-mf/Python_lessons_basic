@@ -83,6 +83,7 @@ try:
         file_name = sys.argv[2]
 except IndexError:
     dir_name = None
+    file_name = None
 
 try:
     key = sys.argv[1]
