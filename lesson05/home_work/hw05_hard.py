@@ -52,6 +52,7 @@ def cp():
         print('файл {} уже существует'.format(file_name))
 
 def make_dir():
+    print(dir_name)
     if not dir_name:
         print("Необходимо указать имя директории вторым параметром")
         return
@@ -94,8 +95,6 @@ except IndexError:
 
 if key:
     if do.get(key):
-        print(dir_name)
-        print(file_name)
         do[key]()
     else:
         print("Задан неверный ключ")
