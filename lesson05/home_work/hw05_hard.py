@@ -30,6 +30,12 @@ def print_help():
     print("rm <file_name> - удаляет указанный файл (запросить подтверждение операции)")
     print("cd <full_path or relative_path> - меняет текущую директорию на указанную")
 
+def rm():
+    return None
+
+def cd():
+    return None
+
 def ls():
     print(os.getcwd())
 
