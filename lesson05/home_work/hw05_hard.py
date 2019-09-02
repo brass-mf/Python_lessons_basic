@@ -94,6 +94,8 @@ except IndexError:
 
 if key:
     if do.get(key):
+        print(dir_name)
+        print(file_name)
         do[key]()
     else:
         print("Задан неверный ключ")
