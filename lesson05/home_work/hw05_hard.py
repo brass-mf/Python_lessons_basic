@@ -81,6 +81,7 @@ try:
         dir_name = sys.argv[2]
     if sys.argv[1]=='cp' or sys.argv[1]=='rm':
         file_name = sys.argv[2]
+        print(file_name)
 except IndexError:
     dir_name = None
     file_name = None
