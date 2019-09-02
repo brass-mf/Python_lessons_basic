@@ -25,6 +25,10 @@ def print_help():
     print("help - получение справки")
     print("mkdir <dir_name> - создание директории")
     print("ping - тестовый ключ")
+    print("ls - отображение пути текущей директории")
+
+def ls()
+    return os.getcwd()
 
 
 def make_dir():
@@ -46,6 +50,7 @@ do = {
     "help": print_help,
     "mkdir": make_dir,
     "ping": ping
+    "ls": ls
 }
 
 try:
