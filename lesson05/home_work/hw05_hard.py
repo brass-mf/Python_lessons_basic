@@ -43,8 +43,8 @@ def cp():
     #from shutil import copyfile
     if not file_name:
         print("Необходимо указать имя файла вторым параметром")
-      #   return
-     file_path = os.path.join(os.getcwd(), file_name)
+        return
+        file_path = os.path.join(os.getcwd(), file_name)
     try:
         copyfile(file_path, file_path + '_copy')
         print('файл {} создан'.format(file_name))
