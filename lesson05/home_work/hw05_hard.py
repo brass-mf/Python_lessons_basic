@@ -41,20 +41,19 @@ def ls():
 
 def cp():
     #from shutil import copyfile
-    print(file_name)
     if not file_name:
-        print('Необходимо указать имя файла вторым параметром')
-        return
-    file_name = os.path.join(os.getcwd(), file_name)
+        print("Необходимо указать имя файла вторым параметром")
+         return
+     file_path = os.path.join(os.getcwd(), file_name)
     try:
-        copyfile(file_name, file_name + '_copy')
+        copyfile(file_path, file_path + '_copy')
         print('файл {} создан'.format(file_name))
     except FileExistsError:
         print('файл {} уже существует'.format(file_name))
 
 def make_dir():
-        print("Необходи
-    if not dir_name:мо указать имя директории вторым параметром")
+    if not dir_name:
+        print("Необходимо указать имя директории вторым параметром")
         return
     dir_path = os.path.join(os.getcwd(), dir_name)
     try:
@@ -82,7 +81,6 @@ try:
         dir_name = sys.argv[2]
     elif sys.argv[1]=='cp':
         file_name = sys.argv[2]
-        print(file_name)
 except IndexError:
     dir_name = None
     file_name = None
