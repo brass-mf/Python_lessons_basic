@@ -1,6 +1,15 @@
 # Задача-1: Написать класс для фигуры-треугольника, заданного координатами трех точек.
 # Определить методы, позволяющие вычислить: площадь, высоту и периметр фигуры.
 
+class Triangle:
+    def __init__(self, coordinates):
+        self.coordinates = coordinates
+	def get_full_name(self):
+        return self.name + ' ' + self.surname
+
+var_triangle = Triangle(((1,2),(3,4),(5,6)))
+print('Координаты точек:'+ Triangle.coordinates)
+
 
 # Задача-2: Написать Класс "Равнобочная трапеция", заданной координатами 4-х точек.
 # Предусмотреть в классе методы:
