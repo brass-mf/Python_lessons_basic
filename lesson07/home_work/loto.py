@@ -57,3 +57,75 @@
 модуль random: http://docs.python.org/3/library/random.html
 
 """
+import random
+class Card:
+    def __init__(self, name):
+        '''
+        :param name: Имя игрока
+        '''
+        self.card = ([], [], [])
+        self.name = name
+        for i, item in enumerate(random.sample(range(1, 90), 16)):
+            if i > 0 and i <= 5:
+                self.card[0].append(item)
+            elif i > 5 and i <= 10:
+                self.card[1].append(item)
+            elif i > 10 and i <= 16:
+                self.card[2].append(item)
+        self.card = (sorted(self.card[0]), sorted(self.card[1]), sorted(self.card[2]))
+
+    def __str__(self):
+        '''
+        Перегружаем print карточки в красивом виде
+        :return:
+        '''
+        return '\nКарточка игрока: '+str(self.name)+'\n-----------------------\n'+str(self.card[0])+'\n'+str(self.card[1])+'\n'+str(self.card[2])+'\n-----------------------'
+
+    def num_exists(self,num,cross_out=True):
+        '''
+
+        :param num: Число для проверки
+        :param cross_out: Зачеркнуть ли если оно есть?
+        :return: Есть или нет число в карточке
+        '''
+        result = False
+        i=0
+        y=0
+        while i < len(self.card):
+            while y < len(self.card[i]):
+                if str(num) == str(self.card[i][y]):
+                    result = True
+                    if cross_out==True:
+                        self.card[i][y]='-'
+                y+=1
+            y=0
+            i+=1
+        return result
+
+
+#основной блок
+card_human = Card('Сергей')
+card_comp = Card('Computer')
+n=90 #число бочонков
+cross_out = None
+for i, item in enumerate(random.sample(range(1, n+1), n)):
+    print ('Выпало число:',str(item),' Осталось:',n-i-1)
+    print(card_human)
+    print(card_comp)
+
+    while cross_out not in ('Y','N'):
+        cross_out = input('Зачеркнуть цифру? (y/n):').upper()
+
+    print (cross_out)
+    if cross_out=='Y':
+        if card_human.num_exists(item,True):
+            card_comp.num_exists(item,True)
+        else:
+            print ('Игра окончена, нет такого числа в карте')
+            exit()
+    elif cross_out=='N':
+            if card_human.num_exists(item, False):
+                print ('Игра окончена, в карте есть число',item)
+                exit()
+            else:
+                card_comp.num_exists(item, True)
